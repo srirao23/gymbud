@@ -13,6 +13,7 @@ import * as Sharing from 'expo-sharing';
 // From @types/node/buffer
 import { Buffer as NodeBuffer } from 'buffer';
 import { render } from 'react-dom';
+import { ScrollView } from 'react-native-web';
 
 //suggestions section
 
@@ -107,6 +108,15 @@ function HomeScreen({navigation}) {
                </View>
 
       </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.legsButton}
+        onPress = {() => navigation.navigate('Workouts')}>
+        <View>
+          <Text style={styles.scrollView3}>
+            FREE WORKOUTS
+          </Text>
+        </View>
+      </TouchableOpacity>
       
     </View>
     </DismissKeyboard>
@@ -184,232 +194,47 @@ function Fitness({navigation}) {
 
 }
 //push screen
-const Push = () => {
-  const [weight, setWeight] = useState('0');
-  const [reps, setReps] = useState('0');
-  const [fatigue, setFatigue] = useState('0');
+const Workouts = () => {
   
 
   return (
+
+    <View styles={styles.scrollView2}>
+      
+        <Text style={styles.scrollView1}>
+        Push Workouts: dumbell chest press, pec fly, shoulder press, lateral raise, tricep push down, tricep extension, dips, push ups, close grip bench press, incline bench press
+            
+        </Text >
+        <Text>
+
+        </Text>
+        <Text style={styles.scrollView1}>
+        Pull Workouts: lat pull down, bicep curls, reverse bicep curls, pull ups, lateral row, military row, seated row, chest-assisted T-bar row, trap
+            
+        </Text>
+        <Text>
+          
+          </Text>
+        <Text style={styles.scrollView1}>
+        Leg Workouts: leg press, calf-raise, leg extension, leg curl, deadlift, romanian deadlift, back squat, front squat, hack squat, bulgarian split squat
+        </Text>
+
+      
+    </View>
+
+
     
-      
-
-    <DismissKeyboard>
-    <View style={styles.container2}>
-      <Text style = {styles.weightText}>
-        Weight of Exercise (lbs): 
-      </Text>
-      <TextInput 
-        style={styles.textInput}
-        keyboardType='numeric'
-        placeHolder="0"
-        onChangeText={(value) => setWeight(value)}
-      >
-
-      </TextInput>
-      <Text style = {styles.weightText}> Reps Completed </Text>
-      <TextInput
-        style={styles.textInput}
-        keyboardType='numeric'
-        placeHolder="0"
-        onChangeText={(val) => setReps(val)}
-      >
-
-      </TextInput>
-      <Text style = {styles.weightText}>
-        Fatigue Level (0-10):  
-      </Text>
-      <TextInput 
-        style={styles.textInput}
-        keyboardType='numeric'
-        placeHolder="0"
-        onChangeText={(va) => setFatigue(va)}
-      >
-
-      </TextInput>
-     
-      
-      
-
-      </View>
-    </DismissKeyboard>
 
   );
 
 }
 
 //pull screen
-const Pull = () => {
-  return (
-    <DismissKeyboard>
-    <View style={styles.container2}>
-      <Text style = {styles.weightText}>
-        Weight of Exercise (lbs): 
-      </Text>
-      <TextInput 
-        style={styles.textInput}
-        keyboardType='numeric'
-        placeHolder="0"
-        onChangeText={(value) => setFlush(value)}
-      >
-
-      </TextInput>
-      <Text style = {styles.weightText}> Reps Completed </Text>
-      <TextInput
-        style={styles.textInput}
-        keyboardType='numeric'
-        placeHolder="0"
-        onChangeText={(val) => setShower(val)}
-      >
-
-      </TextInput>
-      <Text style = {styles.weightText}>
-        Fatigue Level (0-10):  
-      </Text>
-      <TextInput 
-        style={styles.textInput}
-        keyboardType='numeric'
-        placeHolder="0"
-        onChangeText={(va) => setLaundry(va)}
-      >
-
-      </TextInput>
-      
-      
-    
-
-      </View>
-    </DismissKeyboard>
-
-  );
-
-
-
-}
 
 //legs screen
-const Legs = ()=> {
-  return (
-    <DismissKeyboard>
-    <View style={styles.container2}>
-      <Text style = {styles.weightText}>
-        Weight of Exercise (lbs): 
-      </Text>
-      <TextInput 
-        style={styles.textInput}
-        keyboardType='numeric'
-        placeHolder="0"
-        onChangeText={(value) => setFlush(value)}
-      >
-
-      </TextInput>
-      <Text style = {styles.weightText}> Reps Completed </Text>
-      <TextInput
-        style={styles.textInput}
-        keyboardType='numeric'
-        placeHolder="0"
-        onChangeText={(val) => setShower(val)}
-      >
-
-      </TextInput>
-      <Text style = {styles.weightText}>
-        Fatigue Level (0-10):  
-      </Text>
-      <TextInput 
-        style={styles.textInput}
-        keyboardType='numeric'
-        placeHolder="0"
-        onChangeText={(va) => setLaundry(va)}
-      >
-
-      </TextInput>
-      
-      
-    
-
-      </View>
-    </DismissKeyboard>
-
-  );
-
-
-}
 
 //usage screen
-const UsageScreen = () => {
-  const [flush, setFlush] = useState('0');
-  const [shower, setShower] = useState('0');
-  const [dish, setDish] = useState('0');
-  const [laundry, setLaundry] = useState('0');
-  const [remain, setGoal] = useState('0');
-  return (
-    <DismissKeyboard>
-    <View style={styles.container2}>
-      <Text style = {styles.weightText}>
-        Total Toilet Flushes: 
-      </Text>
-      <TextInput 
-        style={styles.textInput}
-        keyboardType='numeric'
-        placeHolder="0"
-        onChangeText={(value) => setFlush(value)}
-      >
 
-      </TextInput>
-      <Text style = {styles.weightText}> Minutes Showered </Text>
-      <TextInput
-        style={styles.textInput}
-        keyboardType='numeric'
-        placeHolder="0"
-        onChangeText={(val) => setShower(val)}
-      >
-
-      </TextInput>
-      <Text style = {styles.weightText}>
-        Loads of Laundry:  
-      </Text>
-      <TextInput 
-        style={styles.textInput}
-        keyboardType='numeric'
-        placeHolder="0"
-        onChangeText={(va) => setLaundry(va)}
-      >
-
-      </TextInput>
-      <Text style = {styles.weightText}>
-        Loads of Dishwashing:  
-      </Text>
-
-      <TextInput 
-        style={styles.textInput}
-        keyboardType='numeric'
-        placeHolder="0"
-        onChangeText={(er) => setDish(er)}
-      >
-
-      </TextInput>
-      
-      <Text>
-        You have used {10*parseInt(dish)+1.6*parseInt(flush)+20*parseInt(laundry)+2.1*parseInt(shower)} gallons of water today!
-        
-
-      </Text>
-      <Text>
-      {ShowerSuggestion(shower)}
-      </Text>
-      <Text>
-        {LaundrySuggestion(laundry)}
-      </Text>
-      
-      
-      
-
-    </View>
-    </DismissKeyboard>
-
-  );
-
-}
 //navigation between pages
 const Stack = createNativeStackNavigator();
 function App() {
@@ -418,10 +243,9 @@ function App() {
         <Stack.Navigator>
             <Stack.Screen name = "Home" component = {HomeScreen} />
             <Stack.Screen name = "Fitness" component = {Fitness} />
-            <Stack.Screen name = "Usage" component = {UsageScreen} />
-            <Stack.Screen name = "Push" component = {Push} />
-            <Stack.Screen name = "Pull" component = {Pull} />
-            <Stack.Screen name = "Legs" component = {Legs} />
+       
+            <Stack.Screen name = "Workouts" component = {Workouts} />
+          
         </Stack.Navigator>
     </NavigationContainer>
   );
@@ -446,7 +270,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 1,
     width: '100%',
-    height: '15%',
+    height: '20%',
     backgroundColor: "#c2daff",
     
     alignItems: 'center',
@@ -455,35 +279,19 @@ const styles = StyleSheet.create({
   splitsButton: {
     position: 'absolute',
     
-    top: '10%',
+    top: '20%',
 
     width: '100%',
-    height: '95%',
+    height: '65%',
     backgroundColor: "#c7eaff",
     justifyContent: 'center',
     alignItems: 'center',
   },
-  pushButton: {
-    position: 'absolute',
-    top: '0%',
-    width: '100%',
-    height: '33%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#9EB4FF'
-  },
-  pullButton: {
-    position: 'absolute',
-    top: '33%',
-    width: '100%',
-    height: '33%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#9EE2FF'
-  },
+ 
+
   legsButton: {
     position: 'absolute',
-    top: '66%',
+    bottom: '0%',
     width: '100%',
     height: '33%',
     justifyContent: 'center',
@@ -538,15 +346,37 @@ const styles = StyleSheet.create({
     position: 'absolute',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '55%',
-    height: '25%',
+    width: '75%',
+    height: '55%',
 
   },
   textMain: {
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    fontFamily: "GillSans-Italic",
+    fontSize: 25,
     
   },
+  scrollView1: {
+   
+    backgroundColor: "#bee4f4",
+    fontSize: 24,
+    fontFamily: 'Georgia'
+  },
+  scrollView2: {
+    flex: 1,
+    backgroundColor: "#bee4f4",
+    justifyContent: 'center',
+    
+  },
+
+  scrollView3: {
+   
+  
+    fontSize: 30,
+    fontFamily: 'GillSans-Bold'
+  },
+
 
     
   
