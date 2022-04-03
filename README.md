@@ -4,3 +4,5 @@ created using React Native and Expo Client
 Libraries used were scikit-learn, numpy, pandas, and React Native
 
 Thank you!
+
+(everything is in master)
